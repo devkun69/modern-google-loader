@@ -1,7 +1,7 @@
-import JollyRoger from "@/components/JollyRoger";
+import PhilippineFlag from "@/components/PhilippineFlag";
 
 const App = () => {
-  return (<JollyRoger/>);
+  return (<PhilippineFlag/>);
 };
 
 export default App;
