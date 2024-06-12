@@ -1,5 +1,5 @@
 {
-  "name": "philippine-flag",
+  "name": "best-places-in-the-philippines",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,8 @@
     "next": "14.2.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "sass": "^1.77.4"
+    "sass": "^1.77.4",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.5"
   }
 }

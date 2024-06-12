@@ -1,7 +1,7 @@
-import PhilippineFlag from "@/components/PhilippineFlag";
+import Places from "@/components/Places";
 
 const App = () => {
-  return (<PhilippineFlag/>);
+  return (<Places/>);
 };
 
 export default App;

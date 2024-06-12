@@ -1,0 +1,122 @@
+@import "../../public/abstracts/__abstracts-dir";
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+
+    .item {
+        width: 200px;
+        height: 300px;
+        list-style-type: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+        background-position: center;
+        background-size: cover;
+        z-index: 1;
+        border-radius: 20px;
+        transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+            left: 0;
+            top: 0;
+            transform: none;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            box-shadow: none;
+            opacity: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+                pointer-events: none;
+            }
+        }
+
+        &:nth-child(3) {
+            left: 50%;
+        }
+
+        $start-value: 220;
+        $increment-value: 220;
+
+        @for $index from 4 through 10 {
+            $value: $start-value + ($index - 4) * $increment-value;
+
+            &:nth-child(#{$index}) {
+                left: calc(50% + (#{$value}px));
+                @if $index == 10 {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .content {
+            width: min(30vw, 700px);
+            position: absolute;
+            top: 50%;
+            left: 3rem;
+            transform: translateY(-50%);
+            color: $white;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+            opacity: 0;
+            display: none;
+
+            .title {
+                text-transform: uppercase;
+                overflow: hidden;
+                font-size: 3rem;
+            }
+
+            .description,
+            .location {
+                line-height: 1.7;
+                margin: 1rem 0 1.5rem;
+            }
+
+            .description {
+                font-size: 1.2rem;
+            }
+
+            .location {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .item:nth-of-type(2) .content {
+        display: block;
+        animation: show 0.75s ease-in-out 0.3s forwards;
+    }
+
+    .nav {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        user-select: none;
+    }
+}
+
+@keyframes show {
+    0% {
+        filter: blur(5px);
+        transform: translateY(calc(-50% + 75px));
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
