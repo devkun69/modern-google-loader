@@ -1,7 +1,7 @@
-import Places from "@/components/Places";
+import Banners from "@/components/Banners";
 
 const App = () => {
-  return (<Places/>);
+  return (<Banners/>);
 };
 
 export default App;
