@@ -1,7 +1,7 @@
-import Banners from "@/components/Banners";
+import Loader from "@/components/Loader";
 
 const App = () => {
-  return (<Banners/>);
+  return (<Loader/>);
 };
 
 export default App;
